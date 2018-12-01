@@ -30,7 +30,8 @@ def clean_data(input_data_path='data/train.csv', output_data_path='data/train_cl
                     if ((-76 <= pickup_longitude <= -72) and (-76 <= dropoff_longitude <= -72) and
                             (38 <= pickup_latitude <= 42) and (38 <= dropoff_latitude <= 42) and
                             (1 <= passenger_count <= 6) and (0 < fare_amount <= 300) and
-                            (pickup_longitude != dropoff_longitude) and (pickup_latitude != dropoff_latitude)):
+                            (pickup_longitude != dropoff_longitude) and (pickup_latitude != dropoff_latitude) and
+                            (fare_amount >= 0)):
                         writer.writerow(row)
                 except:
                     pass
